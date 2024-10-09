@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from rest_framework import generics
 from .models import Livro, Autor, Categoria
 from .serializers import LivroSerializer, AutorSerializer, CategoriaSerializer
+from .filters import LivroFilter
 
 
 def home(request):
@@ -26,6 +27,7 @@ def home(request):
 class LivroList(generics.ListCreateAPIView):
     queryset = Livro.objects.all()
     serializer_class = LivroSerializer
+    filterset_class = LivroFilter
 
 class LivroDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Livro.objects.all()
