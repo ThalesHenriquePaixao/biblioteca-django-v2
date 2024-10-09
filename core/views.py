@@ -1,6 +1,27 @@
+from django.http import HttpResponse
 from rest_framework import generics
 from .models import Livro, Autor, Categoria
 from .serializers import LivroSerializer, AutorSerializer, CategoriaSerializer
+
+
+def home(request):
+    
+    html = """
+    <html>
+        <head>
+            <title>Página Inicial</title>
+        </head>
+        <body>
+            <h1>Bem-vindo à Biblioteca!</h1>
+            <p>Você pode acessar as seguintes URLs:</p>
+            <ul>
+                <li><a href="/admin/">Admin</a></li>
+                <li><a href="/api/livros/">API</a></li>
+            </ul>
+        </body>
+    </html>
+    """
+    return HttpResponse(html)
 
 class LivroList(generics.ListCreateAPIView):
     queryset = Livro.objects.all()

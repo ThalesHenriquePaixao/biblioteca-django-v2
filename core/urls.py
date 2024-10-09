@@ -9,3 +9,4 @@ urlpatterns = [
     path('categorias/', CategoriaList.as_view(), name='categoria-list'),
     path('categorias/<int:pk>/', CategoriaDetail.as_view(), name='categoria-detail'),
 ]
+
