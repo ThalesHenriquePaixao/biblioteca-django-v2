@@ -4,14 +4,14 @@ class Categoria(models.Model):
     nome = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nome  # Retorna o nome da categoria como representação em string
+        return self.nome  
 
 
 class Autor(models.Model):
     nome = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nome  # Retorna o nome do autor como representação em string
+        return self.nome  
 
 
 class Livro(models.Model):
@@ -21,4 +21,4 @@ class Livro(models.Model):
     publicado_em = models.DateField()
     
     def __str__(self):
-        return self.titulo  # Retorna o título do livro como representação em string
+        return self.titulo  
